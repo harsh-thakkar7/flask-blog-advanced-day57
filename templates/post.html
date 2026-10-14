@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<div class="wrapper">
+    <div class="top">
+        <div class="title"><h1>My Blog</h1></div>
+    </div>
+
+    {% if post %}
+    <div class="content">
+        <div class="card">
+            <h1>{{ post.title }}</h1>
+            <h2>{{ post.subtitle }}</h2>
+            <p>{{ post.body }}</p>
+        </div>
+    </div>
+    {% else %}
+    <div class="content">
+        <div class="card">
+            <h1>Blog post not found.</h1>
+        </div>
+    </div>
+    {% endif %}
+</div>
+</body>
+<footer>
+    <p>Made by Love in India by Harsh</p>
+</footer>
+</html>
